@@ -1,8 +1,11 @@
-import 'package:e_commerce_app/app/models/product-item.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import 'components/ discount.dart';
+import 'components/product-item.dart';
 import 'components/sidebar-widget.dart';
+import 'models/discount-model.dart';
 import 'models/product.dart';
 
 class HomePage extends StatefulWidget {
@@ -14,7 +17,18 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-    List<ProductModel> listProduct = [
+    List listDiscount =[
+      DiscoutModel(
+        id: 0,
+        title: 'Spring Offer',
+        discout: 20,
+        circularText: 'SPRING FOOD',
+        description: 'Use this coupon\n for discout',
+        color: Colors.lightGreen[200]
+      )
+    ];
+    List listProduct = [
+      ProductModel(),
       ProductModel(
           id: 1,
           title: 'Potato',
@@ -22,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               'https://superprix.vteximg.com.br/arquivos/ids/178620-292-292/Batata-Especial-1kg.png?v=636857520320030000',
           price: 30,
           per: 'kg',
-          color: Colors.brown[300]),
+          color: Color(0xFFE3CDA3)),
       ProductModel(
           id: 2,
           title: 'Cabbage',
@@ -30,7 +44,7 @@ class _HomePageState extends State<HomePage> {
               'https://lh3.googleusercontent.com/proxy/aUZnkJX3kJ3I5WUTLLMwfGWbx4mLXvMJjaVWwwWhpUGJjHE6C9i1XTuGRPnk1EWJwN-WbO_Yt2unpy0ip8K5PfyCmvgCIyppqGEhbhy0eobd4vBKdhyBW6OpORYrgIFnzEBPWoQa',
           price: 25,
           per: 'pc',
-          color: Colors.purpleAccent),
+          color: Color(0XFFDFA2D7)),
       ProductModel(
           id: 3,
           title: 'CauliFlower',
@@ -38,35 +52,42 @@ class _HomePageState extends State<HomePage> {
               'https://purepng.com/public/uploads/medium/purepng.com-cauliflowercauliflowerplantsgreen-cauliflowerfood-1701527244149w2p41.png',
           price: 30,
           per: 'pc',
-          color: Colors.lightGreen),
+          color: Color(0xFFB0D47D)),
       ProductModel(
           id: 4,
           title: 'Pumpkin',
+          per: 'pc',
           picture:
               'https://pluspng.com/img-png/pumpkin-png-pumpkin-png-image-3288.png',
           price: 45,
-          color: Colors.orangeAccent),
+          color: Color(0xFFF5C58D),),
       ProductModel(
           id: 5,
           title: 'Beet',
           picture:
               'https://i.dlpng.com/static/png/1488215-beet-png-beet-png-527_286_preview.png',
           price: 120,
-          color: Colors.redAccent),
+          color: Color(0xFFECA0B2),
+          per: 'kg'  
+        ),
       ProductModel(
           id: 5,
-          title: 'Beet',
+          title: 'Bell pepper',
+          picture:
+              'https://www.pngkey.com/png/full/164-1643396_reb-bell-pepper-png-1-red-bell-pepper.png',
+          price: 100,
+          per: 'kg',
+          color: Color(0xFFEE7F82)),
+      ProductModel(
+          id: 5,
+          title: 'Chayote',
           picture:
               'https://i.dlpng.com/static/png/1488215-beet-png-beet-png-527_286_preview.png',
           price: 120,
-          color: Colors.redAccent),
-      ProductModel(
-          id: 5,
-          title: 'Beet',
-          picture:
-              'https://i.dlpng.com/static/png/1488215-beet-png-beet-png-527_286_preview.png',
-          price: 120,
-          color: Colors.redAccent),
+          color: Color(0xFFB0D47D),
+          per: 'kg'
+        
+      ),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -146,20 +167,25 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: Container(
                   height: size.height,
-                  child: GridView.builder(
-                    physics: BouncingScrollPhysics(),
+                  child: StaggeredGridView.countBuilder(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 2,
+                    mainAxisSpacing: 1,
                     itemCount: listProduct.length,
-                    // staggeredTileBuilder: (int index) => StaggeredTile.count(1,2),
-                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 2,
-                      mainAxisSpacing: 0.01,
-                      childAspectRatio:(MediaQuery.of(context).size.width) /(MediaQuery.of(context).size.height - 80),
-                    ),
                     itemBuilder: (context, index) {
                       ProductModel productModel = listProduct[index];
-                     
-                      return ProductItem(
+                      DiscoutModel discoutModel = listDiscount[0];
+
+                      return index==0? DiscountCard(
+                        title: discoutModel.title,
+                        description: discoutModel.description,
+                        circularText: discoutModel.circularText,
+                        discout: discoutModel.discout,
+                        color: discoutModel.color,
+                        
+                      )
+                        
+                        :ProductItem(
                         title: productModel.title,
                         picture: productModel.picture,
                         price: productModel.price,
@@ -168,7 +194,10 @@ class _HomePageState extends State<HomePage> {
                         onTap: () {
                           //Navigator.push(context, MaterialPageRoute(builder: (context) => DE))
                         },
-                      );
+                      ); 
+                    },
+                    staggeredTileBuilder: (index) {
+                      return StaggeredTile.count(1, index==0 ? 1 : 1.399);
                     },
                   ),
                 ),
