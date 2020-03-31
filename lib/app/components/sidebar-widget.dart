@@ -17,7 +17,7 @@ class _SidebarState extends State<Sidebar> {
       "Fruits",
       "& Seeds",
     ];
-    var size = MediaQuery.of(context).size;
+    //var size = MediaQuery.of(context).size;
     return Container(
 
       margin: EdgeInsets.only(right: 10),
@@ -30,11 +30,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[0],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
@@ -47,11 +47,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[1],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
@@ -64,11 +64,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[2],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Colors.green,
                     fontWeight: FontWeight.bold,
                   ),
@@ -82,11 +82,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[3],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
@@ -100,11 +100,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[4],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
@@ -117,11 +117,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[5],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
@@ -135,11 +135,11 @@ class _SidebarState extends State<Sidebar> {
             child: InkWell(
               onTap: () {},
               child: Container(
-                padding: EdgeInsets.all(15),
+                padding: EdgeInsets.all(13),
                 child: Text(
                   category[6],
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 14,
                     color: Color(0XFF31492E),
                     fontWeight: FontWeight.bold,
                   ),
