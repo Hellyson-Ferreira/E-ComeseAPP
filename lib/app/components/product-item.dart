@@ -72,7 +72,7 @@ class _ProductItemState extends State<ProductItem> {
                   child: Align(
                     alignment: Alignment.topCenter,
                     //Container de shadow effect
-                    child: Image.network(
+                    child: Image.asset(
                       widget.picture,
                       height: size.height * 0.203,
                     ),
