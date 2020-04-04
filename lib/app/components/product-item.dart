@@ -29,13 +29,13 @@ class _ProductItemState extends State<ProductItem> {
     var size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: widget.onTap,
-      child: Column(
+      child: Wrap(
         children: <Widget>[
           Stack(
             children: <Widget>[
               //Color card
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 8,vertical: 9),
+                margin: EdgeInsets.symmetric(horizontal: 0, vertical: 7),
                 height: size.height * 0.34,
                 width: size.width * 0.4,
                 decoration: BoxDecoration(
@@ -45,8 +45,8 @@ class _ProductItemState extends State<ProductItem> {
               ),
               //Button add
               Positioned(
-                bottom: 8,
-                right: 8,
+                bottom: 7,
+                right: 0,
                 child: Container(
                   height: size.height * 0.072,
                   width: size.width * 0.12,
@@ -64,9 +64,12 @@ class _ProductItemState extends State<ProductItem> {
               ),
               //image of product
               Container(
-                margin: EdgeInsets.symmetric(horizontal: 15,vertical: 10,),
-                height: size.height * 0.333,
-                width: size.width * 0.388,
+                margin: EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 35,
+                ),
+                height: size.height * 0.30 - 60,
+                width: size.width * 0.35,
                 child: Padding(
                   padding: EdgeInsets.only(bottom: size.height * 0.062),
                   child: Align(
@@ -74,15 +77,14 @@ class _ProductItemState extends State<ProductItem> {
                     //Container de shadow effect
                     child: Image.asset(
                       widget.picture,
-                      height: size.height * 0.203,
+                      height: size.height * 0.12,
                     ),
                   ),
                 ),
               ),
               //Title
               Container(
-                margin: EdgeInsets.only(
-                    left: 16, top: 145, bottom:0),
+                margin: EdgeInsets.only(left: 16, top: 125, bottom: 0),
                 child: Text(
                   widget.title,
                   style: TextStyle(
@@ -93,10 +95,9 @@ class _ProductItemState extends State<ProductItem> {
               ),
               //price
               Container(
-                margin: EdgeInsets.only(
-                    left: 16, top: 195, bottom:0),
+                margin: EdgeInsets.only(left: 16, top: 170, bottom: 0),
                 child: Text(
-                  '€ ' + widget.price.toString(),
+                  '€ ${widget.price.toInt()}',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
@@ -105,16 +106,15 @@ class _ProductItemState extends State<ProductItem> {
               ),
               //per
               Container(
-                margin: EdgeInsets.only(
-                    left: 16, top: 215, bottom:0),
+                margin: EdgeInsets.only(left: 16, top: 189, bottom: 0),
                 child: Text(
                   'Per ${widget.per}',
                   style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+                      fontSize: 12,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.black54),
                 ),
-              ),            
+              ),
             ],
           )
         ],

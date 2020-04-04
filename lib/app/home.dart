@@ -5,6 +5,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'components/ discount.dart';
 import 'components/product-item.dart';
 import 'components/sidebar-widget.dart';
+import 'detail.dart';
 import 'models/discount-model.dart';
 import 'models/product.dart';
 
@@ -38,50 +39,57 @@ class _HomePageState extends State<HomePage> {
           picture: 'assets/vegetables/potato.png',
           price: 30,
           per: 'kg',
-          color: Color(0xFFE3CDA3)),
+          color: Color(0xFFE3CDA3),
+          details: ''),
       ProductModel(
           id: 2,
           title: 'Cabbage',
           picture: 'assets/vegetables/cabbage.png',
           price: 25,
           per: 'pc',
-          color: Color(0XFFDFA2D7)),
+          color: Color(0XFFDFA2D7),
+          details: ''),
       ProductModel(
           id: 3,
           title: 'CauliFlower',
           picture: 'assets/vegetables/cauliflower.png',
           price: 30,
           per: 'pc',
-          color: Color(0xFFB0D47D)),
+          color: Color(0xFFB0D47D),
+          details: ''),
       ProductModel(
-        id: 4,
-        title: 'Pumpkin',
-        per: 'pc',
-        picture: 'assets/vegetables/pumpkin.png',
-        price: 45,
-        color: Color(0xFFF5C58D),
-      ),
+          id: 4,
+          title: 'Pumpkin',
+          per: 'pc',
+          picture: 'assets/vegetables/pumpkin.png',
+          price: 45,
+          color: Color(0xFFF5C58D),
+          details: ''),
       ProductModel(
           id: 5,
           title: 'Beet',
           picture: 'assets/vegetables/beet.png',
           price: 120,
           color: Color(0xFFECA0B2),
-          per: 'kg'),
+          per: 'kg',
+          details:
+              'The beetroot is the taproot portion of a beet plant, usually known in North America as the beet, and also known as the table beet, garden beet, red beet, dinner beet or golden beet.'),
       ProductModel(
           id: 5,
           title: 'Bell pepper',
           picture: 'assets/vegetables/bell-pepper.png',
           price: 100,
           per: 'kg',
-          color: Color(0xFFEE7F82)),
+          color: Color(0xFFEE7F82),
+          details: ''),
       ProductModel(
           id: 5,
           title: 'Chayote',
           picture: 'assets/vegetables/chayote.png',
           price: 120,
           color: Color(0xFFB0D47D),
-          per: 'kg'),
+          per: 'kg',
+          details: ''),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -117,7 +125,7 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(
               MdiIcons.giftOutline,
-              color: Colors.green,
+              color: Color(0xffB3B4A9),
             ),
             title: Text('2'),
           ),
@@ -159,42 +167,57 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               Sidebar(),
               Expanded(
-                child: Container(
-                  //color: Colors.black,
-                  height: 450,
-                  child: StaggeredGridView.countBuilder(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 2,
-                    mainAxisSpacing: 1,
-                    itemCount: listProduct.length,
-                    itemBuilder: (context, index) {
-                      ProductModel productModel = listProduct[index];
-                      DiscoutModel discoutModel = listDiscount[0];
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    //color: Colors.black,
+                    height: 450,
+                    child: StaggeredGridView.countBuilder(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 2,
+                      mainAxisSpacing: 1,
+                      itemCount: listProduct.length,
+                      itemBuilder: (context, index) {
+                        ProductModel productModel = listProduct[index];
+                        DiscoutModel discoutModel = listDiscount[0];
 
-                      return index == 0
-                          ? DiscountCard(
-                              title: discoutModel.title,
-                              description: discoutModel.description,
-                              circularText: discoutModel.circularTex,
-                              discout: discoutModel.discout,
-                              color: discoutModel.color,
-                              image1: discoutModel.image1,
-                              image2: discoutModel.image2,
-                              image3: discoutModel.image3)
-                          : ProductItem(
-                              title: productModel.title,
-                              picture: productModel.picture,
-                              price: productModel.price,
-                              per: productModel.per,
-                              color: productModel.color,
-                              onTap: () {
-                                //Navigator.push(context, MaterialPageRoute(builder: (context) => DE))
-                              },
-                            );
-                    },
-                    staggeredTileBuilder: (index) {
-                      return StaggeredTile.count(1, index == 0 ? 1 : 1.399);
-                    },
+                        return index == 0
+                            ? DiscountCard(
+                                title: discoutModel.title,
+                                description: discoutModel.description,
+                                circularText: discoutModel.circularTex,
+                                discout: discoutModel.discout,
+                                color: discoutModel.color,
+                                image1: discoutModel.image1,
+                                image2: discoutModel.image2,
+                                image3: discoutModel.image3)
+                            : ProductItem(
+                                title: productModel.title,
+                                picture: productModel.picture,
+                                price: productModel.price,
+                                per: productModel.per,
+                                color: productModel.color,
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => Detail(
+                                        title: productModel.title,
+                                        picture: productModel.picture,
+                                        price: productModel.price,
+                                        per: productModel.per,
+                                        color: productModel.color,
+                                        details: productModel.details,
+                                      ),
+                                    ),
+                                  );
+                                },
+                              );
+                      },
+                      staggeredTileBuilder: (index) {
+                        return StaggeredTile.count(1, index == 0 ? 0.98 : 1.4);
+                      },
+                    ),
                   ),
                 ),
               )

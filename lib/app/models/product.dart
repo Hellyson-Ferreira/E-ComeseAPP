@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter/rendering.dart';
+import 'dart:ui';
 
 List<ProductModel> productModelFromJson(String str) => List<ProductModel>.from(json.decode(str).map((x) => ProductModel.fromMap(x)));
 
@@ -13,7 +13,7 @@ class ProductModel {
     final double price;
     final String per;
     final Color color;
-    
+    final String details;
 
     ProductModel({
         this.id,
@@ -22,6 +22,7 @@ class ProductModel {
         this.price,
         this.per,
         this.color,
+        this.details,
     });
 
     ProductModel copyWith({
@@ -31,6 +32,7 @@ class ProductModel {
         double price,
         String per,
         Color color,
+        String details,
     }) => 
         ProductModel(
             id: id ?? this.id,
@@ -39,6 +41,7 @@ class ProductModel {
             price: price ?? this.price,
             per: per ?? this.per,
             color: color ?? this.color,
+            details: details ?? this.details,
         );
 
     factory ProductModel.fromMap(Map<String, dynamic> json) => ProductModel(
@@ -48,6 +51,7 @@ class ProductModel {
         price: json["price"] == null ? null : json["price"].toDouble(),
         per: json["per"] == null ? null : json["per"],
         color: json["color"] == null ? null : json["color"],
+        details: json["details"] == null ? null : json["details"],
     );
 
     Map<String, dynamic> toMap() => {
@@ -57,5 +61,6 @@ class ProductModel {
         "price": price == null ? null : price,
         "per": per == null ? null : per,
         "color": color == null ? null : color,
+        "details": details == null ? null : details,
     };
 }
