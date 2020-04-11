@@ -40,7 +40,8 @@ class _HomePageState extends State<HomePage> {
           price: 30,
           per: 'kg',
           color: Color(0xFFE3CDA3),
-          details: ''),
+          details:
+              'The potato is a root vegetable native to the Americas, a starchy tuber of the plant Solanum tuberosum, and the plant itself, a perennial in the family Solanaceae.'),
       ProductModel(
           id: 2,
           title: 'Cabbage',
@@ -48,7 +49,8 @@ class _HomePageState extends State<HomePage> {
           price: 25,
           per: 'pc',
           color: Color(0XFFDFA2D7),
-          details: ''),
+          details:
+              'Cabbage  is a leafy green, red (purple), or white (pale green) biennial plant grown as an annual vegetable crop for its dense-leaved heads. '),
       ProductModel(
           id: 3,
           title: 'CauliFlower',
@@ -56,7 +58,8 @@ class _HomePageState extends State<HomePage> {
           price: 30,
           per: 'pc',
           color: Color(0xFFB0D47D),
-          details: ''),
+          details:
+              'Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which is in the family Brassicaceae. It is an annual plant that reproduces by seed. '),
       ProductModel(
           id: 4,
           title: 'Pumpkin',
@@ -64,7 +67,8 @@ class _HomePageState extends State<HomePage> {
           picture: 'assets/vegetables/pumpkin.png',
           price: 45,
           color: Color(0xFFF5C58D),
-          details: ''),
+          details:
+              'A pumpkin is a cultivar of winter squash that is round with smooth, slightly ribbed skin, and most often deep yellow to orange in coloration.'),
       ProductModel(
           id: 5,
           title: 'Beet',
@@ -89,7 +93,8 @@ class _HomePageState extends State<HomePage> {
           price: 120,
           color: Color(0xFFB0D47D),
           per: 'kg',
-          details: ''),
+          details:
+              'Chayote, also known as mirliton squash, is an edible plant belonging to the gourd family, Cucurbitaceae. '),
     ];
     return Scaffold(
       appBar: AppBar(
