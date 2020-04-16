@@ -29,6 +29,7 @@ class Detail extends StatefulWidget {
 class _DetailState extends State<Detail> {
   @override
   Widget build(BuildContext context) {
+    var _itemCount = 0;
     var size = MediaQuery.of(context).size;
     //var topSpace = MediaQuery.of(context).padding.top + kToolbarHeight;
     return Scaffold(
@@ -54,7 +55,7 @@ class _DetailState extends State<Detail> {
           Positioned(
             top: 0,
             child: Container(
-              height: size.height/2,
+              height: size.height / 2,
               width: size.width,
               color: widget.color,
             ),
@@ -65,7 +66,7 @@ class _DetailState extends State<Detail> {
             top: 25,
             left: 0,
             right: 0,
-            bottom: size.height/2,
+            bottom: size.height / 2,
             child: Container(
               height: size.height,
               width: size.width,
@@ -73,7 +74,7 @@ class _DetailState extends State<Detail> {
                 alignment: Alignment.topCenter,
                 child: Image.asset(
                   widget.picture,
-                  height: size.height/4,
+                  height: size.height / 4,
                 ),
               ),
             ),
@@ -86,7 +87,7 @@ class _DetailState extends State<Detail> {
             right: 0,
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 30),
-              height: size.height/2,
+              height: size.height / 2,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
@@ -119,11 +120,9 @@ class _DetailState extends State<Detail> {
                       ),
                     ],
                   ),
-                   SizedBox(height: 10),
-                   //Details
-                  Text(
-                    widget.details.toString()
-                  )
+                  //Details
+                  Text(widget.details.toString()),
+                
                 ],
               ),
             ),
@@ -138,11 +137,11 @@ class _DetailState extends State<Detail> {
               height: size.height * 0.098,
               decoration: BoxDecoration(
                 color: Colors.green,
-                borderRadius: BorderRadius.circular(30.0)
-                // borderRadius: BorderRadius.only(
-                //   topLeft: Radius.circular(30),
-                //   topRight: Radius.circular(30),
-                // ),
+                //borderRadius: BorderRadius.circular(30.0)
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(30),
+                  topRight: Radius.circular(30),
+                ),
               ),
               child: Center(
                 child: Row(
