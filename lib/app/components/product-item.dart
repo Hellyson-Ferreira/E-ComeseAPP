@@ -106,7 +106,7 @@ class _ProductItemState extends State<ProductItem> {
               Container(
                 margin: EdgeInsets.only(left: 16, top: 170, bottom: 0),
                 child: Text(
-                  '€ ${widget.price.toInt()}',
+                  '£ ${widget.price.toInt()}',
                   style: TextStyle(
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

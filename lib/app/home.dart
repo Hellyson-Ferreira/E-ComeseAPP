@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/app/%20shopping_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -108,11 +109,19 @@ class _HomePageState extends State<HomePage> {
             onPressed: () {}),
         actions: <Widget>[
           IconButton(
-              icon: Icon(
-                Icons.shopping_basket,
-                color: Colors.black,
-              ),
-              onPressed: () {})
+            icon: Icon(
+              Icons.shopping_basket,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ShoppingCart(),
+                ),
+              );
+            },
+          )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
