@@ -1,14 +1,13 @@
-import 'package:e_commerce_app/app/%20shopping_cart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-
-import 'components/ discount.dart';
+import 'components/discount.dart';
 import 'components/product-item.dart';
 import 'components/sidebar-widget.dart';
 import 'detail.dart';
 import 'models/discount-model.dart';
 import 'models/product.dart';
+import 'shopping_cart.dart';
 
 class HomePage extends StatefulWidget {
   @override
