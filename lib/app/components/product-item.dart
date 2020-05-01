@@ -51,10 +51,17 @@ class _ProductItemState extends State<ProductItem> {
                   height: size.height * 0.072,
                   width: size.width * 0.12,
                   padding: EdgeInsets.all(0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(15)
+                      
+                    )
+                  ),
                   child: RaisedButton(
                     onPressed: (){},
                     elevation: 0,
-                    color: Colors.white,
+                    color:widget.color.withAlpha(150),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(15),
