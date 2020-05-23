@@ -12,6 +12,7 @@
 </p>
 
 >  Aplicativo de compras de supermercado
+>  O designer desse App foi tirado do site Dribbble [Link do Designer](https://dribbble.com/shots/10848940-Grocery-Shopping-App) 
 
 ### 🏠 [Homepage](https://github.com/Hellyson-Ferreira/Grocery-Shopping-App)
 
