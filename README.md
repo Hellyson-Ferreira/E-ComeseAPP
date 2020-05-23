@@ -1,8 +1,8 @@
 <h1 align="center">Welcome to Grocery-Shopping-App 🖖</h1>
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.0.1-blue.svg?cacheSeconds=2592000" />
-  <img src="https://img.shields.io/badge/flutter-%3E%3D5.5.0-blue.svg" />
-  <img src="https://img.shields.io/badge/dart-%3E%3D9.3.0-blue.svg" />
+  <img src="https://img.shields.io/badge/flutter-%3E%3D1.17.1-blue.svg" />
+  <img src="https://img.shields.io/badge/dart-%3E%3D2.8.0-blue.svg" />
   <a href="https://github.com/Hellyson-Ferreira/Grocery-Shopping-App/#readme" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
